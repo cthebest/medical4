@@ -72,10 +72,10 @@
     </div>
 
 
-    <section class="space-y-4">
+    <section class="space-y-4 mt-4">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120689.12363162886!2d-98.26300596649035!3d19.04019627469931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1673910984785!5m2!1ses-419!2sco"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="w-full"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0578568532974!2d-100.46401698542688!3d20.62649840676551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35060a351bb49%3A0x27cf979beb4956d7!2sHospital%20Santo%20Tom%C3%A1s!5e0!3m2!1ses-419!2sco!4v1677625534600!5m2!1ses-419!2sco"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
     </section>
 </x-web-layout>
