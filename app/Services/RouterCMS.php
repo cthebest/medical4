@@ -56,16 +56,17 @@ class RouterCMS
             $resource = substr($path, $pos + 1);
             $path = substr($path, 0, $pos);
         }
-
-        $route_name = $menuItem->component_option->route;
+        if (!$menuItem) abort(404);
+        $route_name = $menuItem->component_option->route ?? null;
         $field = 'alias';
+
         if ($resource) {
             $route_name = $menuItem->component_option->component->route;
         } else {
             $field = 'id';
             $resource = $menuItem->resource_id;
         }
-
+        if (!$route_name) abort(404);
         $routes = \Route::getRoutes();
         $route = $routes->getByName($route_name);
 
@@ -76,7 +77,7 @@ class RouterCMS
         $route->bind(request());
         $parameters = $route->signatureParameters();
         foreach ($parameters as $parameter) {
-            if (strcasecmp('field', $parameter->name)===0) {
+            if (strcasecmp('field', $parameter->name) === 0) {
                 $route->setParameter($parameter->name, $field);
             } else {
                 $route->setParameter($parameter->name, $resource);

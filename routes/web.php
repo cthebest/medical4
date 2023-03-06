@@ -27,8 +27,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->prefix('admin')->name('dashboard');
 
 Route::middleware('web')->group(function () {
-    Route::get('article/{value}', [ArticleController::class, 'showArticle'])
+    Route::get('articles/{value}', [ArticleController::class, 'showArticle'])
         ->name('p_articles.show');
+    Route::get('articles', [ArticleController::class, 'all'])
+        ->name('p_articles.index');
     Route::get('articles/{id}/category', [CategoryController::class, 'allArticles'])
         ->name('p_articles.by_category');
 

@@ -121,4 +121,11 @@ class ArticleController extends Controller
         $article = Article::where($field, $value)->first();
         return \view('articles.show', compact('article'));
     }
+
+
+    public function all()
+    {
+        $articles = Article::paginate(20);
+        return \view('articles.index-web', compact('articles'));
+    }
 }
