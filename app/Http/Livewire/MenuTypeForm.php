@@ -16,6 +16,13 @@ class MenuTypeForm extends Component
     public $title;
     public $resource_id;
 
+    public function mount($component_option_id)
+    {
+        $this->component_option_id = $component_option_id;
+
+        $this->searchComponentOption();
+    }
+
     public function render()
     {
         return view('livewire.menu-type-form');
@@ -37,5 +44,14 @@ class MenuTypeForm extends Component
         $this->title = $componentOption->name;
         $this->field = $componentOption->livewire_field;
         $this->dispatchBrowserEvent('closeComponent');
+    }
+
+    private function searchComponentOption()
+    {
+        if (!$this->component_option_id) return;
+        $componentOption = ComponentOption::find($this->component_option_id);
+        $this->component_id = $componentOption->component->id;
+        $this->title = $componentOption->name;
+        $this->field = $componentOption->livewire_field;
     }
 }

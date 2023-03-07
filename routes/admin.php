@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;

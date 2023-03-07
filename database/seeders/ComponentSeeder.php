@@ -36,13 +36,6 @@ class ComponentSeeder extends Seeder
             'route' => 'p_articles.show'
         ]);
 
-        ComponentOption::create([
-            'name' => 'Todos los artículos',
-            'livewire_field' => '',
-            'filter' => AllArticlesFilter::class,
-            'component_id' => $component->id,
-            'route' => 'p_articles.index'
-        ]);
 
         ComponentOption::create([
             'name' => 'Artículos por categoría',
@@ -51,6 +44,15 @@ class ComponentSeeder extends Seeder
             'component_id' => $component->id,
             'route' => 'p_articles.by_category'
         ]);
+
+        ComponentOption::create([
+            'name' => 'Todos los artículos',
+            'livewire_field' => '',
+            'filter' => AllArticlesFilter::class,
+            'component_id' => $component->id,
+            'route' => 'p_articles.index'
+        ]);
+
 
         //System link
         $component = Component::create([

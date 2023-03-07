@@ -32,6 +32,7 @@ class RouterCMS
             $routeFilter = new $class();
             // Obtenemos la URL asociada a la opción y al modelo.
             $url = $routeFilter->handle($componentOption, $model);
+
             // Si se encuentra una URL válida, terminamos la búsqueda.
             if ($url) break;
         }

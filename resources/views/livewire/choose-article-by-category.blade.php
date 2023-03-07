@@ -21,8 +21,13 @@
                     @endforeach
                 @endif
             </div>
+
+            @if($errors->has('resource_id'))
+                <span class="invalid-feedback d-block" role="alert"><strong>{{ $errors->first('resource_id') }}</strong></span>
+            @endif
         </x-slot>
     </x-adminlte-input>
+
 
     <input type="text" name="resource_id" value="{{ $resource_id }}" hidden>
 </div>

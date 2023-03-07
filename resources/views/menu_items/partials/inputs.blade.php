@@ -14,10 +14,10 @@
     </x-adminlte-select>
 @endif
 @livewire('menu-type-form', [
-    'title' => $menu_item?->component_option->name,
+    'title' =>  $menu_item?->component_option->name,
     'field' => $menu_item?->component_option->livewire_field,
     'component_id' => $menu_item?->component_id,
-    'component_option_id' => $menu_item?->component_option_id,
+    'component_option_id' => old('component_option_id',$menu_item?->component_option_id) ,
     'resource_id' => $menu_item?->resource_id,
 ])
 <x-adminlte-button id="create-article" label="{{ trans('adminlte::adminlte.Save') }}" theme="primary" icon="fas fa-save"

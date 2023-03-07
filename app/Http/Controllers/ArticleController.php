@@ -100,8 +100,39 @@ class ArticleController extends Controller
         if ($request->hasFile('image')) {
             $validatedData['image'] = $this->saveImage($request->image);
         }
+        return $this->saveImages($validatedData);
+    }
 
-        return $validatedData;
+    private function saveImages($validated)
+    {
+
+
+        $dom = new \DomDocument();
+        $dom->loadHtml($validated['description'], LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $image_file = $dom->getElementsByTagName('img');
+
+        if (!\File::exists(public_path('uploads'))) {
+            \File::makeDirectory(public_path('uploads'));
+        }
+
+        foreach ($image_file as $key => $image) {
+            $data = $image->getAttribute('src');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data) = explode(',', $data);
+
+            $img_data = base64_decode($data);
+            $image_name = "/uploads/" . time() . $key . '.png';
+            $path = public_path() . $image_name;
+            file_put_contents($path, $img_data);
+
+            $image->removeAttribute('src');
+            $image->setAttribute('src', $image_name);
+        }
+
+        $validated['description'] = $dom->saveHTML();
+
+        return $validated;
     }
 
     private function saveImage($image): string
@@ -128,4 +159,6 @@ class ArticleController extends Controller
         $articles = Article::paginate(20);
         return \view('articles.index-web', compact('articles'));
     }
+
+
 }
