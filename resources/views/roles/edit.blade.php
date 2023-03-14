@@ -9,14 +9,14 @@
                         {{ session('success') }}
                     </x-adminlte-alert>
                 @endif
-                <form method="POST" action="{{ route('roles.update', $role->id) }}">
+                <form method="POST" action="{{ route('roles.update', $role->id) }}" accept-charset="UTF-8">
                     @method('PUT')
                     @csrf
                     @include('roles.partials.inputs')
 
                     <div class="flex items-center justify-end mt-4">
-                        <x-adminlte-button id="create-category" label="{{ trans('adminlte::adminlte.Save') }}" theme="primary"
-                            icon="fas fa-save" type="submit" />
+                        <x-adminlte-button id="create-category" label="{{ trans('adminlte::adminlte.Save') }}"
+                            theme="primary" icon="fas fa-save" type="submit" />
                     </div>
                 </form>
             </div>

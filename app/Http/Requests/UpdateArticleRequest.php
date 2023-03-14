@@ -43,7 +43,8 @@ class UpdateArticleRequest extends FormRequest
                 'required',
                 new Enum(ArticleStatus::class)
             ],
-            'description' => 'nullable',
+            'description' => 'required|max:125',
+            'body' => 'nullable',
             'category_id' => 'exists:categories,id|integer',
             'image' => 'nullable',
             'tags' => 'nullable|array'

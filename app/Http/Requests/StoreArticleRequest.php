@@ -43,7 +43,8 @@ class StoreArticleRequest extends FormRequest
                 'required',
                 new Enum(ArticleStatus::class)
             ],
-            'description' => 'nullable',
+            'body' => 'nullable',
+            'description' => 'required|max:125',
             'image' => 'nullable',
             'tags' => 'nullable|array',
             'category_id' => [

@@ -1,17 +1,31 @@
+@php
+    $showMenu = $opened ? 'display:block;' : 'display:hidden';
+@endphp
 <div>
-    <nav class="bg-[#006699] text-white w-full font-bold">
-        <div class="flex justify-between items-center w-5/6 container mx-auto py-2">
-            <img src="../imgs/logoenoe.png" alt="logo" class="w-40 object-cover"/>
-            <div class="flex items-center space-x-3">
+    <header class="navigation">
+        <a href="{{ url('/') }}"><img src="{{ asset('imgs/logoenoe.png') }}" alt="logo" class="logo" /></a>
+        <button type="button" class="hamburguer" wire:click="open"><i class="fa-solid fa-bars"></i></button>
+        <nav class="menu-desktop">
+            <ul>
                 @foreach ($menuItems as $menuItem)
-                    <div class="flex flex-col items-center justify-center text-lg">
-                        <a href="{{ url($menuItem->path) }}"
-                           class="rounded-full hover:text-[#c7f768] text-center w-full">
+                    <li>
+                        <a href="{{ url($menuItem->path) }}">
                             {{ $menuItem->title }}
                         </a>
-                    </div>
+                    </li>
                 @endforeach
-            </div>
-        </div>
-    </nav>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu" style="{{ $showMenu }}">
+        <ul>
+            @foreach ($menuItems as $menuItem)
+                <li>
+                    <a href="{{ url($menuItem->path) }}">
+                        {{ $menuItem->title }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 </div>

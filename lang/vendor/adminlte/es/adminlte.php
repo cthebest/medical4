@@ -66,4 +66,5 @@ return [
     'update_roles' => 'Actualizar roles',
     'delete_roles' => 'Eliminar roles',
     'icon' => 'Ícono',
+    'body' => 'Cuerpo del artículo'
 ];

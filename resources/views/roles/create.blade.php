@@ -9,7 +9,7 @@
                         {{ session('success') }}
                     </x-adminlte-alert>
                 @endif
-                <form method="POST" action="{{ route('roles.store') }}">
+                <form method="POST" action="{{ route('roles.store') }}" accept-charset="UTF-8">
                     @csrf
                     @include('roles.partials.inputs')
 

@@ -18,7 +18,8 @@ class Article extends Model implements ComponentType
         'status',
         'description',
         'user_id',
-        'category_id'
+        'category_id',
+        'body'
     ];
 
 

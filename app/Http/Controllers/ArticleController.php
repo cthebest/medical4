@@ -108,7 +108,7 @@ class ArticleController extends Controller
 
 
         $dom = new \DomDocument();
-        $dom->loadHtml($validated['description'], LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $dom->loadHtml(mb_convert_encoding($validated['body'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $image_file = $dom->getElementsByTagName('img');
 
         if (!\File::exists(public_path('uploads'))) {
@@ -117,20 +117,23 @@ class ArticleController extends Controller
 
         foreach ($image_file as $key => $image) {
             $data = $image->getAttribute('src');
+            $image_data = explode(';', $data);
 
-            list($type, $data) = explode(';', $data);
-            list(, $data) = explode(',', $data);
+            if (count($image_data) > 1) {
+                list($type, $data) = $image_data;
+                list(, $data) = explode(',', $data);
 
-            $img_data = base64_decode($data);
-            $image_name = "/uploads/" . time() . $key . '.png';
-            $path = public_path() . $image_name;
-            file_put_contents($path, $img_data);
+                $img_data = base64_decode($data);
+                $image_name = "/uploads/" . time() . $key . '.png';
+                $path = public_path() . $image_name;
+                file_put_contents($path, $img_data);
 
-            $image->removeAttribute('src');
-            $image->setAttribute('src', $image_name);
+                $image->removeAttribute('src');
+                $image->setAttribute('src', $image_name);
+            }
         }
 
-        $validated['description'] = $dom->saveHTML();
+        $validated['body'] = $dom->saveHTML();
 
         return $validated;
     }
@@ -159,6 +162,4 @@ class ArticleController extends Controller
         $articles = Article::paginate(20);
         return \view('articles.index-web', compact('articles'));
     }
-
-
 }

@@ -1,6 +1,6 @@
 <x-web-layout>
     <x-slot:banner></x-slot:banner>
-    <div class="p-4">
+    <div>
         @include('index-module')
         {{ $articles->links() }}
     </div>

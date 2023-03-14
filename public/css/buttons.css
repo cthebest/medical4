@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.btn {
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+  border: none;
+  text-decoration: none;
+}
+
+.btn.btn-secondary {
+  background: rgb(199, 247, 104);
+  color: rgb(0, 102, 153);
+}

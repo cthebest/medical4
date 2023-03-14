@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content article {
+    width: 18rem;
+}
+
+.container>h1 {
+    text-align: center;
+}
+
+.content article div span:nth-child(1) {
+    color: rgb(0, 102, 153);
+    font-weight: bold;
+}
+
+.content article div span:nth-child(2) {
+    color: rgb(112, 112, 112);
+}
+
+.content article img {
+    width: 18rem;
+    height: 10rem;
+    object-fit: cover;
+}

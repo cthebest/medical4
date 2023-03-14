@@ -1,0 +1,42 @@
+.services {
+    display: grid;
+	padding: 2rem;
+}
+
+.specialist-info span{
+	color: gray;
+}
+
+.services-info .cart{
+	display: flex;
+}
+.services-info .cart>div{
+	padding-top: 0.5rem;
+}
+.services-info .cart div>p{
+	color:rgb(102, 102, 102);
+}
+.services-info .cart:nth-child(n-1){
+	margin-bottom: 0.3rem;
+}
+
+.services-info .cart img{
+	width: 4rem;
+	height: 4rem;
+	object-fit: fill;
+}
+
+.services img{
+	width: 100%;
+}
+
+@media (min-width:768px) {
+	.services{
+		grid-template-columns: 25rem 1fr;
+		grid-gap:2rem;
+	}
+
+	.specialist-info>p{
+		font-size: 1.5rem;
+	}
+}

@@ -1,0 +1,35 @@
+@import url("menu.css");
+@import url("slider-section.css");
+@import url("buttons.css");
+@import url("information-section.css");
+@import url("services-section.css");
+@import url("list-content.css");
+@import url("footer.css");
+@import url('article.css');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Golos Text', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
