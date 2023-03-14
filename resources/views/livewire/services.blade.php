@@ -14,6 +14,7 @@
                         <div>
                             <h3>{{ $article->title }}</h3>
                             <p>{{ $article->description }}</p>
+                            <a href="{{ to_url($article) }}">Leer más</a>
                         </div>
                     </div>
                 @endforeach
