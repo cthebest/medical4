@@ -77,5 +77,22 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'delete_roles'
         ]);
+
+         //Preguntas
+         Permission::create([
+            'name' => 'index_faq'
+        ]);
+
+        Permission::create([
+            'name' => 'create_faq'
+        ]);
+
+        Permission::create([
+            'name' => 'update_faq'
+        ]);
+
+        Permission::create([
+            'name' => 'delete_faq'
+        ]);
     }
 }

@@ -100,7 +100,13 @@ class ArticleController extends Controller
         if ($request->hasFile('image')) {
             $validatedData['image'] = $this->saveImage($request->image);
         }
-        return $this->saveImages($validatedData);
+
+        if($validatedData['body']){
+            return $this->saveImages($validatedData);
+
+        }
+
+        return $validatedData;
     }
 
     private function saveImages($validated)

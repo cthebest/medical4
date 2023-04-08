@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\RoleController;
@@ -13,5 +14,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         'categories' => CategoryController::class,
         'menu-items' => MenuItemController::class,
         'roles' => RoleController::class,
+        'faqs' => FaqController::class,
     ]);
 });

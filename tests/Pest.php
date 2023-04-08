@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Tests\TestCase;
 |
 */
 
-uses(TestCase::class, RefreshDatabase::class)->in('Feature');
+uses(TestCase::class, RefreshDatabase::class, WithFaker::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------

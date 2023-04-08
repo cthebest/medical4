@@ -316,6 +316,11 @@ return [
             'route' => 'categories.index',
             'icon' => 'fas fa-list-ul',
         ],
+        [
+            'text' => 'Preguntas frecuentes',
+            'route' => 'faqs.index',
+            'icon' => 'fas fa-question',
+        ],
         ['header' => 'menu'],
         [
             'text' => 'menu_item',
