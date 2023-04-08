@@ -6,7 +6,6 @@
                 <h2>Nuestras últimas publicaciones</h2>
             </div>
             <div class="row no-gutters">
-
                 @foreach ($articles as $article)
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">

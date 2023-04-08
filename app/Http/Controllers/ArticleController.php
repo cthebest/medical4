@@ -101,9 +101,8 @@ class ArticleController extends Controller
             $validatedData['image'] = $this->saveImage($request->image);
         }
 
-        if($validatedData['body']){
+        if ($validatedData['body']) {
             return $this->saveImages($validatedData);
-
         }
 
         return $validatedData;
@@ -165,7 +164,10 @@ class ArticleController extends Controller
 
     public function all()
     {
-        $articles = Article::paginate(20);
+
+        $articles = Article::whereHas('category', function ($query) {
+            $query->whereNot('alias', 'servicios');
+        })->paginate(20);
         return \view('articles.index-web', compact('articles'));
     }
 }
