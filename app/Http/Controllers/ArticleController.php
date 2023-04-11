@@ -111,7 +111,6 @@ class ArticleController extends Controller
     private function saveImages($validated)
     {
 
-
         $dom = new \DomDocument();
         $dom->loadHtml(mb_convert_encoding($validated['body'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $image_file = $dom->getElementsByTagName('img');

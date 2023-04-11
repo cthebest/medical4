@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Mail\ContactUsSended;
 use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+
 class ContactController extends Controller
 {
 
@@ -30,11 +32,10 @@ class ContactController extends Controller
             'message.required' => 'El mensaje es requerido'
         ]);
 
-        Mail::to('contacto@enoecruzmartinez.mx')->send(new ContactUsSended($request));
+        Mail::to('contacto@enoecruzneuro.com.mx')->send(new ContactUsSended($request));
 
-        $request->session()->flash('success', 'Se ha enviado el correo');
+        $request->session()->flash('success', 'El correo se envió correctamente');
 
         return redirect()->back();
     }
-
 }
