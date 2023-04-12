@@ -78,8 +78,8 @@ class PermissionSeeder extends Seeder
             'name' => 'delete_roles'
         ]);
 
-         //Preguntas
-         Permission::create([
+        //Preguntas
+        Permission::create([
             'name' => 'index_faq'
         ]);
 
@@ -93,6 +93,22 @@ class PermissionSeeder extends Seeder
 
         Permission::create([
             'name' => 'delete_faq'
+        ]);
+        //Preguntas
+        Permission::create([
+            'name' => 'index_banner'
+        ]);
+
+        Permission::create([
+            'name' => 'create_banner'
+        ]);
+
+        Permission::create([
+            'name' => 'update_banner'
+        ]);
+
+        Permission::create([
+            'name' => 'delete_banner'
         ]);
     }
 }

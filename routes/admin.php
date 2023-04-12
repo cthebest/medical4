@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ImageController;
@@ -15,5 +16,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         'menu-items' => MenuItemController::class,
         'roles' => RoleController::class,
         'faqs' => FaqController::class,
+        'banners' => BannerController::class,
     ]);
 });

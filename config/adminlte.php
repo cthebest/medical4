@@ -321,6 +321,11 @@ return [
             'route' => 'faqs.index',
             'icon' => 'fas fa-question',
         ],
+        [
+            'text' => 'Banners',
+            'route' => 'banners.index',
+            'icon' => 'fa fa-image',
+        ],
         ['header' => 'menu'],
         [
             'text' => 'menu_item',
