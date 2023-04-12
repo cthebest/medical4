@@ -1,7 +1,7 @@
 <x-web-layout>
 
     <x-slot:banner>
-        @include('slider')
+        <livewire:banner-module></livewire:banner-module>
     </x-slot:banner>
 
     <!-- ======= Featured Services Section ======= -->
