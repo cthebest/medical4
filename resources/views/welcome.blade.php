@@ -49,7 +49,7 @@
     <section id="featured-services" class="w-100">
 
         <div class="w-100 d-flex justify-content-center">
-            <video controls src="{{ asset('imgs/enoe.mp4') }}" autoplay class="w-25 h-25">
+            <video id="vid" controls src="{{ asset('imgs/enoe.mp4') }}" autoplay class="w-25 h-25" loop muted>
                 Tu navegador no admite el elemento <code>video</code>.
             </video>
         </div>

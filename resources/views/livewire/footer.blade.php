@@ -12,7 +12,7 @@
                              Quintana No.2906 Cerrito
                              Colorado C.P. 76116 Santiago de Querétaro, Qro<br><br>
                              <strong>Teléfono:</strong>442 6822 115<br>
-                             <strong>Email:</strong> info@example.com<br>
+                             <strong>Email:</strong> enoecruzmtz@gmail.com<br>
                          </p>
                          <div class="social-links mt-3">
                              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
