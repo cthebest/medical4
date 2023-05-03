@@ -112,7 +112,7 @@ class ArticleController extends Controller
     {
 
         $dom = new \DomDocument();
-        $dom->loadHtml(mb_convert_encoding($validated['body'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        @$dom->loadHtml(mb_convert_encoding($validated['body'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $image_file = $dom->getElementsByTagName('img');
 
         if (!\File::exists(public_path('uploads'))) {
