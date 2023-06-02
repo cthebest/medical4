@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\ArticleStatus;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Models\Article;
 use App\Models\Category;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -101,45 +98,7 @@ class ArticleController extends Controller
             $validatedData['image'] = $this->saveImage($request->image);
         }
 
-        if ($validatedData['body']) {
-            return $this->saveImages($validatedData);
-        }
-
         return $validatedData;
-    }
-
-    private function saveImages($validated)
-    {
-
-        $dom = new \DomDocument();
-        @$dom->loadHtml(mb_convert_encoding($validated['body'], 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $image_file = $dom->getElementsByTagName('img');
-
-        if (!\File::exists(public_path('uploads'))) {
-            \File::makeDirectory(public_path('uploads'));
-        }
-
-        foreach ($image_file as $key => $image) {
-            $data = $image->getAttribute('src');
-            $image_data = explode(';', $data);
-
-            if (count($image_data) > 1) {
-                list($type, $data) = $image_data;
-                list(, $data) = explode(',', $data);
-
-                $img_data = base64_decode($data);
-                $image_name = "/uploads/" . time() . $key . '.png';
-                $path = public_path() . $image_name;
-                file_put_contents($path, $img_data);
-
-                $image->removeAttribute('src');
-                $image->setAttribute('src', $image_name);
-            }
-        }
-
-        $validated['body'] = $dom->saveHTML();
-
-        return $validated;
     }
 
     private function saveImage($image): string

@@ -29,12 +29,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user->assignRole($role);
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            ComponentSeeder::class,
+            PermissionSeeder::class,
+        ]);
     }
 }

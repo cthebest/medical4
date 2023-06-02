@@ -4,8 +4,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>A tus servicios</h2>
-                <p>Acércate a nosotros para informarte y descubrir un 
+                <h2>A tus servicio</h2>
+                <p>Acércate a nosotros para informarte y descubrir un
                     posible transtorno o problema neurológico. Es importante realizar un estudio a fondo </p>
             </div>
 

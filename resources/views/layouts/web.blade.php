@@ -52,7 +52,7 @@
     <div id="topbar" class="d-flex align-items-center fixed-top">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
             <div class="align-items-center d-none d-md-flex">
-                <i class="bi bi-clock"></i> Lunes - Sabado de 8AM a 10PM
+                <i class="bi bi-clock"></i> Lunes - Sábado de 8AM a 10PM
             </div>
             <div class="d-flex align-items-center">
                 <i class="bi bi-phone"></i> Citas y whatsapp 442 6822 115
@@ -76,8 +76,8 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}?v=<?php echo(rand()); ?>"></script>
     @livewire('footer')
-    @stack('scripts')
     @livewireScripts
+    @stack('scripts')
 </body>
 
 </html>

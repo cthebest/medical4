@@ -19,6 +19,7 @@
 
 @livewire('description', ['description' => old('description', $article?->description)])
 
+
 <x-adminlte-text-editor name="body" label="{{ trans('adminlte::adminlte.body') }}">
     {{ old('body', $article?->body) }}
 </x-adminlte-text-editor>

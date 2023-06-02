@@ -1,12 +1,11 @@
+@if($faqs && $faqs->count()>0)
 <!-- ======= Frequently Asked Questioins Section ======= -->
 <section id="faq" class="faq section-bg">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
             <h2>Preguntas frecuentes</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            <p>Respuestas a tus dudas comunes. Soluciones rápidas y precisas. Simplifica tu vida con nuestras FAQ..</p>
         </div>
 
         <ul class="faq-list">
@@ -27,3 +26,4 @@
 
     </div>
 </section><!-- End Frequently Asked Questioins Section -->
+@endif
