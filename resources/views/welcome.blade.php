@@ -49,7 +49,7 @@
     <section id="featured-services" class="w-100">
 
         <div class="w-100 d-flex justify-content-center">
-            <video id="vid" controls src="{{ asset('imgs/enoe.mp4') }}" autoplay class="w-25 h-25" loop muted>
+            <video id="vid" controls src="{{ asset('imgs/enoe.mp4') }}" autoplay class="w-50 h-50" loop muted>
                 Tu navegador no admite el elemento <code>video</code>.
             </video>
         </div>
@@ -70,7 +70,9 @@
                         <div class="testimonial-item">
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                ¡Increíble experiencia! Nunca pensé que encontraría una solución tan efectiva. El servicio al cliente fue excepcional y el resultado superó mis expectativas. ¡Recomiendo totalmente!
+                                ¡Increíble experiencia! Nunca pensé que encontraría una solución tan efectiva. El
+                                servicio al cliente fue excepcional y el resultado superó mis expectativas. ¡Recomiendo
+                                totalmente!
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
